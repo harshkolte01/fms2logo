@@ -1,0 +1,130 @@
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: transparent;
+    overflow: hidden;
+}
+
+/* Logo Container */
+.logo-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    animation: logo-loop 9s linear infinite;
+}
+
+/* Logo Styling */
+.logo {
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    animation: fade-in-out 9s linear infinite;
+    filter: drop-shadow(0 0 20px #7300ff);
+}
+
+/* Stream Starting Text */
+.stream-text {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700;
+    animation: text-slide 9s linear infinite;
+}
+
+/* Particles */
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #ffd700;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Randomized Particle Placement */
+.particle:nth-child(1) {
+    top: 20%;
+    left: 30%;
+    animation-delay: 0s;
+}
+
+.particle:nth-child(2) {
+    top: 70%;
+    left: 60%;
+    animation-delay: 1s;
+}
+
+.particle:nth-child(3) {
+    top: 40%;
+    left: 80%;
+    animation-delay: 2s;
+}
+
+/* Keyframe Animations */
+
+/* Logo Fade-In and Fade-Out Loop */
+@keyframes fade-in-out {
+    0%, 80% {
+        opacity: 0; /* Invisible at the start and end */
+    }
+    10%, 70% {
+        opacity: 1; /* Fully visible during most of the cycle */
+    }
+}
+
+/* Logo Scale Loop */
+@keyframes logo-loop {
+    0%, 100% {
+        transform: scale(1); /* Normal size */
+    }
+    50% {
+        transform: scale(1.1); /* Slight zoom at the midpoint */
+    }
+}
+
+/* Particle Float */
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-50px) scale(1.2);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Stream Text Slide */
+@keyframes text-slide {
+    0% {
+        bottom: -50px;
+        opacity: 0;
+    }
+    20% {
+        bottom: 10px;
+        opacity: 1;
+    }
+    80% {
+        bottom: 10px;
+        opacity: 1;
+    }
+    100% {
+        bottom: -50px;
+        opacity: 0;
+    }
+}
